@@ -11,7 +11,8 @@ GROUP BY city_name
 
 
 SELECT city_name, dayOfWeek, SUM(CASE WHEN status = 'completed' AND
-                                           DATE_PART('day', request_at - _ts)*24 + DATE_PART('hour', request_at - _ts) <= 168 THEN 1
+                                           DATE_PART('day', request_at - _ts)*24 + DATE_PART('hour', request_at - _ts) <= 168
+                                           THEN 1
                                       ELSE 0
                                  END)/COUNT(*)*100 AS percentOfSignup
 
