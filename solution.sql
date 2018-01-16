@@ -9,7 +9,7 @@ GROUP BY city_name
 
 
 
-```
+
 SELECT city_name, dayOfWeek, SUM(CASE WHEN status = 'completed' AND
                                            DATE_PART('day', request_at - _ts)*24 + DATE_PART('hour', request_at - _ts) <= 168 THEN 1
                                       ELSE 0
@@ -33,7 +33,6 @@ FROM (SELECT *, (CASE WHEN EXTRACT(DOW FROM _ts) = 1 THEN 'Mon'
       
 GROUP BY city_name, dayOfWeek
      
-```   
      
      
      
