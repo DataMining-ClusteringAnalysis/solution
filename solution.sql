@@ -41,7 +41,7 @@ GROUP BY city_name, dayOfWeek
      
      
      
-     )
+    
 
 
       
