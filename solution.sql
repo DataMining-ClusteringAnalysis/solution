@@ -3,8 +3,8 @@ SELECT city_name,
 FROM trips LEFT JOIN cities ON trips.city_id = cities.city_id
 WHERE city_name IN ('Qarth', 'Meereen') AND 
       status = 'completed' AND
-      DATE_PART('day', CURRENT_TIMESTAMP - INTERVAL '30 days') <= 30
-GROUP BY city_name
+      DATE_PART('day', CURRENT_TIMESTAMP - request_at) <= 30
+GROUP BY city_name;
 
 
 
